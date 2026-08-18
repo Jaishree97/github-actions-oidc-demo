@@ -18,8 +18,8 @@ jobs:
       - name: Get GitHub IDs
         run: |
           echo "Repository: ${{ github.repository }}"
-          gh api repos/${{ github.repository }} \
-            --jq '"Owner ID: \(.owner.id)\nRepository ID: \(.id)"'
+          echo "Owner ID: ${{ github.repository_owner_id }}"
+          echo "Repository ID: ${{ github.repository_id }}"
 
       - name: Configure AWS Credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
