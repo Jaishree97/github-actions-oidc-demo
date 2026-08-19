@@ -719,22 +719,11 @@ After completing this hands-on lab, I learned how to:
 
 ```text
 github-actions-oidc-demo/
-│
-├── .github/
-│   └── workflows/
-│       └── aws-oidc-challenge.yml
-│
+├── .github/workflows/
+│   └── aws-oidc-challenge.yml
 ├── images/
-│   ├── 01-github-actions-oidc-identity-provider.png
-│   ├── 02-github-oidc-iam-role-s3-readonly.png
-│   ├── 03-github-oidc-iam-trust-policy.png
-│   ├── 04-github-oidc-authentication-failure.png
-│   ├── 05-aws-oidc-assumerolewithwebidentity-access-denied.png
-│   ├── 06-github-oidc-trust-policy-corrected-subject-claim.png
-│   ├── 07-github-oidc-authentication-success.png
-│   ├── 08-aws-sts-get-caller-identity-oidc-assumed-role.png
-│   └── 09-s3-read-access-validation-oidc.png
-│
+│   └── 01–09 screenshots
+├── LICENSE
 └── README.md
 ```
 ---
