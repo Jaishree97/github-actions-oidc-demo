@@ -4,6 +4,8 @@ Hands-on demonstration of GitHub Actions authentication to AWS using **OpenID Co
 
 **Repository:** https://github.com/Jaishree97/github-actions-oidc-demo
 
+> 📸 **Screenshots:** Supporting screenshots for this hands-on are available in the [`images/`](./images) folder.
+
 ---
 
 ## Overview
@@ -591,6 +593,7 @@ Expected output:
   "Arn": "arn:aws:sts::<AWS_ACCOUNT_ID>:assumed-role/github-oidc-challenge-role/GitHubActions"
 }
 ```
+![AWS STS Get Caller Identity Output](./images/08-aws-sts-get-caller-identity-oidc-assumed-role.png)
 
 > **The `assumed-role` ARN confirms that GitHub Actions successfully assumed the IAM role through AWS STS.**
 
@@ -603,9 +606,7 @@ The IAM role has:
 ```text
 AmazonS3ReadOnlyAccess
 ```
-![AWS STS Get Caller Identity Output](./images/08-aws-sts-get-caller-identity-oidc-assumed-role.png)
-
-workflow runs:
+The workflow runs:
 
 ```bash
 aws s3 ls
@@ -723,8 +724,38 @@ github-actions-oidc-demo/
 │   └── workflows/
 │       └── aws-oidc-challenge.yml
 │
+├── images/
+│   ├── 01-github-actions-oidc-identity-provider.png
+│   ├── 02-github-oidc-iam-role-s3-readonly.png
+│   ├── 03-github-oidc-iam-trust-policy.png
+│   ├── 04-github-oidc-authentication-failure.png
+│   ├── 05-aws-oidc-assumerolewithwebidentity-access-denied.png
+│   ├── 06-github-oidc-trust-policy-corrected-subject-claim.png
+│   ├── 07-github-oidc-authentication-success.png
+│   ├── 08-aws-sts-get-caller-identity-oidc-assumed-role.png
+│   └── 09-s3-read-access-validation-oidc.png
+│
 └── README.md
 ```
+---
+
+# Screenshots
+
+Screenshots from the hands-on implementation are available in the [`images/`](./images) directory.
+
+They cover:
+
+- GitHub OIDC identity provider configuration
+- IAM role configuration
+- IAM trust policy
+- Initial OIDC authentication failure
+- `AssumeRoleWithWebIdentity` authorization failure
+- Corrected immutable `sub` claim
+- Successful GitHub Actions OIDC authentication
+- AWS STS `get-caller-identity` verification
+- Amazon S3 read-access validation
+
+All screenshots are organized and numbered to follow the implementation flow.
 
 ---
 
