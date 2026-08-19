@@ -562,7 +562,7 @@ The workflow performs:
 4. Verify the AWS identity.
 5. Validate S3 read access.
 
-![Successful GitHub Actions OIDC Workflow](./images/06-github-oidc-workflow-success.png)
+![Successful GitHub Actions OIDC Workflow](./images/07-github-oidc-authentication-success.png)
 
 ---
 
@@ -603,16 +603,14 @@ The IAM role has:
 ```text
 AmazonS3ReadOnlyAccess
 ```
-![AWS STS Get Caller Identity Output](./images/07-aws-sts-get-caller-identity.png)
+![AWS STS Get Caller Identity Output](./images/08-aws-sts-get-caller-identity-oidc-assumed-role.png)
 
----
-
-## Step 12 — The workflow runs:
+workflow runs:
 
 ```bash
 aws s3 ls
 ```
-![AWS S3 Read Access Output](./images/08-aws-s3-read-access.png)
+![AWS S3 Read Access Output](./images/09-s3-read-access-validation-oidc.png)
 
 > **This confirms that the temporary AWS credentials have the expected S3 read permissions.**
 
